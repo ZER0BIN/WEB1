@@ -3,22 +3,39 @@
 <head>
   <title>WEB1 - Javascript</title>
   <meta charset="utf-8">
+  <script>
+  function nightDayHandler(self) {
+  var target = document.querySelector('body');
+  if(self.value === 'night'){
+    target.style.backgroundColor = 'black';
+    target.style.color = 'white';
+    self.value = 'day';
+
+    var alist = document.querySelectorAll('a')
+    var i = 0;
+    while(i < alist.length){
+      alist[i].style.color = 'yellow';
+      i++;
+    }
+  } else {
+    target.style.backgroundColor = 'white';
+    target.style.color = 'black';
+    self.value = 'night';
+
+    var alist = document.querySelectorAll('a')
+    var i = 0;
+    while(i < alist.length){
+      alist[i].style.color = 'blue';
+      i++;
+    }
+  }
+}
+  </script>
 </head>
 
 <body>
   <h1><a href="index.html">WEB</a></h1>
-  <input type="button" value="night" onclick="
-    var target = document.querySelector('body');
-    if(this.value === 'night'){
-      target.style.backgroundColor = 'black';
-      target.style.color = 'white';
-      this.value = 'dud';
-    } else {
-      target.style.backgroundColor = 'white';
-      target.style.color = 'black';
-      this.value = 'night';
-    }
-  ">
+  <input id="night_day" type="button" value="night" onclick="nightDayHandler(this)">
 
   <ol>
     <li><a href="1.html">HTML</a></li>
@@ -31,5 +48,6 @@
 
   객체 지향 프로그래밍은 프로그램을 유연하고 변경이 쉽게 만들기 때문에 대규모 소프트웨어 개발에 많이 사용된다. 또한 프로그래밍을 더 배우기 쉽게 하고 소프트웨어 개발과 보수를 간편하게 하며, 보다 직관적인 코드 분석을 가능하게 하는 장점이 있다. 그러나 지나친 프로그램의 객체화 경향은 실제 세계의 모습을 그대로 반영하지 못한다는 비판을 받기도 한다.
   </p>
+  <input id="night_day" type="button" value="night" onclick="nightDayHandler(this)">
 </body>
 </html>
